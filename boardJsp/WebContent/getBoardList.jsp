@@ -1,5 +1,16 @@
+<%@page import="com.tacademy.board.vo.Board"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.tacademy.board.dao.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%
+	//Board 테이블 리스트 불러와서 보여주기
+	BoardDAO dao = new BoardDAO();
+	
+	ArrayList<Board> list = dao.getBoardList();
+%>
+<c:set var="list" value="<%=list %>"/>    
 <!DOCTYPE html >
 <html>
 <head>
@@ -10,7 +21,7 @@
 <body>
 <div id = "main">
 <h1>글 리스트</h1>
-<h3>홍길동님 로그인 환영합니다......
+<h3>${name }님 로그인 환영합니다......
 <a href="logout_proc.jsp">Log-out</a></h3>
 <table id = "table2">
 <tr>
@@ -20,15 +31,15 @@
 	<th id = "col4" width="150">등록일</th>
 	<th id = "col5" width="100">조회수</th>
 </tr>
-
+<c:forEach var="board" items="${list }">
 <tr>
-	<td>test</td>
-	<td align="left"><a href="getBoard.jsp">홍길동</a></td>
-	<td>test</td>
-	<td>test</td>
-	<td>test</td>
+	<td>${board.seq }</td>
+	<td align="left"><a href="getBoard.jsp?seq=${board.seq }">${board.title }</a></td>
+	<td>${board.writer }</td>
+	<td>${board.regDate }</td>
+	<td>${board.cnt }</td>
 </tr>
-
+</c:forEach>
 </table>
 <br>
 <h4><a href="addBoard.jsp">새글 등록</a></h4>
