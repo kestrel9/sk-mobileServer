@@ -2,17 +2,32 @@ package com.tacademy.board.test;
 
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
 import com.tacademy.board.dao.BoardDAO;
 import com.tacademy.board.vo.Board;
+import com.tacademy.board.vo.BoardListResult;
 
 public class BoardTest {
 
 	public BoardTest() {
 		BoardDAO dao = new BoardDAO();
-		Board board = new Board();
-		board.setSeq("3");
+		BoardListResult list  = new BoardListResult();
 		
-		dao.doDeleteBoard(board);
+		
+		list.setCount(dao.getBoardList().size());
+		list.setStatus("success");
+		list.setList(dao.getBoardList());
+		
+		Gson gson = new Gson();
+		
+		String result = gson.toJson(list);
+		
+		System.out.println(result);
+		
+		
+//		board.setSeq("3");
+//		
+//		dao.doDeleteBoard(board);
 		
 //		board.setTitle("변경된 타이틀");
 //		board.setContent("변경된 content");

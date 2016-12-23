@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.tacademy.board.dao.BoardDAO;
 import com.tacademy.board.vo.Board;
+import com.tacademy.board.vo.BoardListResult;
 import com.tacademy.board.vo.Result;
 
 /**
@@ -49,18 +50,20 @@ public class BoardServlet extends HttpServlet {
 	
 	protected void doGetBoardList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDAO dao = new BoardDAO();
-		
+		BoardListResult rstList = new BoardListResult();
 		ArrayList<Board> list = dao.getBoardList();
 		
 		request.setAttribute("list", list);
 		String url = "getBoardList.jsp";
 		
-		
 		String format = request.getParameter("format");
 		if("json".equals(format)){
 			Gson gson = new Gson();
 			url = "result.jsp";
-			String result = gson.toJson(list);
+			rstList.setCount(list.size());
+			rstList.setStatus("success");
+			rstList.setList(list);
+			String result = gson.toJson(rstList);
 			request.setAttribute("result", result);
 		}else{
 			

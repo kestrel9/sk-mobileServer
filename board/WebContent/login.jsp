@@ -10,8 +10,7 @@
 <body>
 <div id="main">
 <h1>로그인</h1>
-<form action="member" method="post">
-	<input type="hidden" name="action" value="login">
+<form action="login.do" method="post">
 	<table id="table1">
 	<tr><td>아이디</td>
 	    <td><input type="text" name="id"/></td>

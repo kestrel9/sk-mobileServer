@@ -6,15 +6,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HelloController implements Controller{
+import com.tacademy.board.dao.BoardDAO;
+import com.tacademy.board.vo.Board;
+
+public class DeleteBoardController implements Controller {
 
 	@Override
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String name=request.getParameter("name");
-		request.setAttribute("name", name);
-		return "hello.jsp";
+		BoardDAO dao = new BoardDAO();
+		Board board = new Board();
+		board.setSeq(request.getParameter("seq"));
+			
+		dao.doDeleteBoard(board);
+		
+		return "getBoardList.do";
 	}
 
 }

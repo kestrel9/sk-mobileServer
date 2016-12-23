@@ -9,11 +9,10 @@
 <body>
 <div class="main">
 <h3>
-	새글 등록하기............<a href='member?action=logout'>LOG-OUT</a>
+	새글 등록하기............<a href='logout.do'>LOG-OUT</a>
 </h3>
 <hr>
-<form action="addBoard_proc.jsp" method="post">
-	<input type="hidden" name="action" value="addBoard">
+<form action="addBoard.do" method="post">
 	<table id="table1">
 		<tr>
 			<td>제목</td>

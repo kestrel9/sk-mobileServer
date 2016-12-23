@@ -10,11 +10,10 @@
 <body>
 <div id="main">
 		<h3>글 내용<br>
-		<a href="member?action=logout">Log-out</a>
+		<a href="logout.do">Log-out</a>
 		</h3>
 		<hr>
-		<form action="board" method="post">
-			<input type="hidden" name="action" value="updateBoard">
+		<form action="updateBoard.do" method="post">
 			<input type="hidden" name="seq" value="${board.seq }">
 			<table id="table1" >
 				<tr>
@@ -45,8 +44,8 @@
 		</form>
 		<hr>
 		<h4><a href="addBoard.jsp">글등록</a>&nbsp;&nbsp;&nbsp; <a
-			href="board?action=deleteBoard&seq=${board.seq }">글삭제</a>&nbsp;&nbsp;&nbsp; <a
-			href="board?action=getBoardList">리스트</a></h4>
+			href="deleteBoard.do?seq=${board.seq }">글삭제</a>&nbsp;&nbsp;&nbsp; <a
+			href="getBoardList.do">리스트</a></h4>
 </div>
 </body>
 </html>

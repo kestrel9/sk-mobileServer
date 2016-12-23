@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html >
 <html>
 <head>
@@ -12,7 +12,7 @@
 <div id = "main">
 <h1>글 리스트</h1>
 <h3>${name }님 로그인 환영합니다......
-<a href="member?action=logout">Log-out</a></h3>
+<a href="logout.do">Log-out</a></h3>
 <table id = "table2">
 <tr>
 	<th id = "col1" width="100">번호</th>
@@ -24,7 +24,7 @@
 <c:forEach var="board" items="${list }">
 <tr>
 	<td>${board.seq }</td>
-	<td align="left"><a href="board?action=getBoard&seq=${board.seq }">${board.title }</a></td>
+	<td align="left"><a href="getBoard.do?seq=${board.seq }">${board.title }</a></td>
 	<td>${board.writer }</td>
 	<td>${board.regDate }</td>
 	<td>${board.cnt }</td>
