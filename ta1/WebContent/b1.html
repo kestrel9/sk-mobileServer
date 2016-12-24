@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+Form tag 예제<br>
+<form action="b2.jsp" method="post">
+data : <input type="text" name="data1"><br>
+<input type="submit" value="전송">
+</form>
+
+<form action="b2.jsp" method="get">
+data1 : <input type="text" name="data1"><br>
+data2 : <input type="text" name="data2"><br>
+<input type="submit" value="전송">
+</form>
+
+<form action="b2.jsp" method="get">
+data1 : <input type="text" name="data1"><br>
+data2 : <input type="password" name="data2"><br>
+<input type="submit" value="전송">
+</form>
+<br>
+<form action="b2.jsp" method="get">
+대 <input type="radio" name="size" value="1">
+중 <input type="radio" name="size" value="2">
+소 <input type="radio" name="size" value="3">
+<input type="submit" value="전송">
+</form>
+<br>
+<form action="b2.jsp" method="get">
+자바<input type="checkbox" name="lang" value="java">
+닷넷<input type="checkbox" name="lang" value=".net">
+C언어<input type="checkbox" name="lang" value="c">
+Php<input type="checkbox" name="lang" value="php">
+<input type="submit" value="전송">
+</form>
+<br>
+<selst action="b2.jsp" method="get">
+자바t type="checkbox" name="lang" value="java">
+닷넷<input type="checkbox" name="lang" value=".net">
+C언어<input type="checkbox" name="lang" value="c">
+Php<input type="checkbox" name="lang" value="php">
+<input type="submit" value="전송">
+</form>
+
+<br>
+
+<a href="b2.jsp?data1=korea&data2=java">get data 전송</a>
+
+</body>
+</html>
