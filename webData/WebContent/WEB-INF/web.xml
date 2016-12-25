@@ -9,4 +9,20 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>product</servlet-name>
+    <servlet-class>org.tacademy.webdata.ProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>product</servlet-name>
+    <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>member</servlet-name>
+    <servlet-class>org.tacademy.webdata.MemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>member</servlet-name>
+    <url-pattern>/member</url-pattern>
+  </servlet-mapping>
 </web-app>
